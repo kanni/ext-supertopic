@@ -12,14 +12,15 @@ return [
 
             foreach ($emotes as $emote) {
                 $path_parts = pathinfo($emote);
-                $name = $path_parts['filename'];
+                $name = ':' . $path_parts['filename'];
                 $type = $path_parts['extension'];
                 $data = file_get_contents($emote);
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
                 
                 $config->Emoticons->add(
-                    ':'.$name,
-                    '<img src="'.$base64.'"/>'
+                    $name,
+                    '<img src="'.$base64.'" alt="'.$name.'" title="'.$name.'" />'
                  );
             };
         })
