@@ -1,0 +1,28 @@
+{
+    "name": "kanni/ext-supertopic",
+    "description": "Supertopic Extension",
+    "authors": [
+        {
+            "name": "kanni",
+            "email": "hi@lukas.io"
+        }
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^0.1.0-beta.8"
+    },
+    "autoload": {
+        "psr-4": {"kanni\\ext-supertopic\\": "src/"}
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Supertopic",
+            "icon": {
+                "name": "fas fa-heart",
+                "backgroundColor": "#FF6600",
+                "color": "#000"
+            }
+        }
+    }
+}
