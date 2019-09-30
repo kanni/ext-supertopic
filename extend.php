@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of Flarum.
- *
- * The creator of bbbbcode is Billy Wilcosky. https://wilcosky.com
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 use Flarum\Extend;
 use Flarum\Frontend\Document;
 use s9e\TextFormatter\Configurator;
@@ -24,6 +16,7 @@ return [
                 $type = $path_parts['extension'];
                 $data = file_get_contents($emote);
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                
                 $config->Emoticons->add(
                     ':'.$name,
                     '<img src="'.$base64.'"/>'
